@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Movie} from '../movie';
+import {MOVIES} from '../mock-movies';
 
 @Component({
   selector: 'app-movies',
@@ -7,18 +8,17 @@ import {Movie} from '../movie';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  movie: Movie = {
-    id: 1,
-    title: 'Iron Man',
-    runtime: 126,
-    rating: 'PG-13',
-    genres: 'Action, Adventure, Sci-Fi'
 
-  }
+  movies = MOVIES;
+  selectedMovie: Movie;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSelect(movie: Movie): void{
+    this.selectedMovie = movie;
   }
 
 }

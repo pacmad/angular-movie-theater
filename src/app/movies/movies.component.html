@@ -1,4 +1,18 @@
-<h2>{{movie.title | uppercase}} Details</h2>
-<div><span>Raiting: </span>{{movie.rating}}</div>
-<div><span>Runtime: </span>{{movie.runtime}}</div>
-<div><span>Genres: </span>{{movie.genres}}</div>
+<h2>Marvel Movies Details</h2>
+<ul class = "movies">
+  <li *ngFor="let movie of movies"
+  [class.selected]="movie === selectedMovie"
+  (click)="onSelect(movie)">
+    <span class="badge">{{movie.id}}</span>{{movie.title}}
+  </li>
+</ul>
+
+<div *ngIf ="selectedMovie">
+  <h2>{{selectedMovie.title | uppercase}} Details</h2>
+<div><span>id: </span>{{selectedMovie.id}}</div>
+<div>
+  <label>title:
+    <input [(ngModel)]="selectedMovie.title" placeholder="title"/>
+  </label>
+</div>
+</div>
