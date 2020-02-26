@@ -9,15 +9,15 @@
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: #EEE;
+  background-color: #f3d000;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
   border-radius: 4px;
 }
 .movies li:hover {
-  color: #607D8B;
-  background-color: #DDD;
+  color: #f3d000;
+  background-color: #333;
   left: .1em;
 }
 .movies li.selected {
