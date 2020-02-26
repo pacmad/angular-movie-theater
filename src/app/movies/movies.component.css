@@ -3,13 +3,14 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 20em;
 }
 .movies li {
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: #f3d000;
+  background-color: #333;
+  color: #eee;
   margin: .5em;
   padding: .3em 0;
   height: 1.6em;
@@ -22,18 +23,18 @@
 }
 .movies li.selected {
   background-color: #CFD8DC;
-  color: white;
+  color:#333;
 }
 .movies li.selected:hover {
   background-color: #BBD8DC;
-  color: white;
+  color:#333;
 }
 .movies .badge {
   display: inline-block;
   font-size: small;
-  color: white;
+  color:#eee;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color:#405061;
+  background-color:#7c0000;
   line-height: 1em;
   position: relative;
   left: -1px;
