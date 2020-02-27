@@ -1,13 +1,14 @@
 <div *ngIf ="movie">
   <h2>{{movie.title | uppercase}} Details</h2>
-<div><span>id: </span>{{movie.id}}</div>
-<div>
-  <ul>
-    <li>Title: {{movie.title}}</li>
-    <li>Runtime: {{movie.runtime}}</li>
-    <li>Rating: {{movie.rating}}</li>
-    <li>Genres: {{movie.genres}}</li>
-    <li>Relear Year: {{movie.releaseYear}}</li>
-  </ul>
-</div>
+  <div><span>id: </span>{{movie.id}}</div>
+  <div>
+    <ul>
+      <li>Title: {{movie.title}}</li>
+      <li>Runtime: {{movie.runtime}}</li>
+      <li>Rating: {{movie.rating}}</li>
+      <li>Genres: {{movie.genres}}</li>
+      <li>Relear Year: {{movie.releaseYear}}</li>
+    </ul>
+  </div>
+  <button (click)="goBack()">Back</button>
 </div>

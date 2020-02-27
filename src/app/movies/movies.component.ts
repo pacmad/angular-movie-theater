@@ -11,7 +11,7 @@ import { MovieService } from '../services/movie.service';
 export class MoviesComponent implements OnInit {
 
   movies: Movie[];
-  selectedMovie: Movie;
+
   // Inject the MovieService
   constructor(private movieService: MovieService) { }
 
@@ -19,14 +19,9 @@ export class MoviesComponent implements OnInit {
     this.getMovies();
   }
 
-  onSelect(movie: Movie): void {
-    this.selectedMovie = movie;
-  }
-
   getMovies(): void{
     // asynchronous assignment emits array of heros
     this.movieService.getMovies()
       .subscribe(movies => this.movies = movies);
   }
-
 }

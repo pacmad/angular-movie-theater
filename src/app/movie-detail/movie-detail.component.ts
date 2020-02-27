@@ -1,5 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { MovieService } from '../services/movie.service';
 import { Movie } from '../movie';
+
 
 @Component({
   selector: 'app-movie-detail',
@@ -7,12 +12,27 @@ import { Movie } from '../movie';
   styleUrls: ['./movie-detail.component.css']
 })
 export class MovieDetailComponent implements OnInit {
-  // external MoviesComponent binds to this movie
-  @Input() movie: Movie;
 
-  constructor() { }
+  movie: Movie;
 
-  ngOnInit() {
+  constructor(
+    private route: ActivatedRoute, // holds info about route
+    private movieService: MovieService, // gets data from server
+    private location: Location // interacts with browser, i.e. back naviagtion
+  ) { }
+
+  ngOnInit(): void {
+    this.getMovie();
+  }
+
+  getMovie(): void {
+    // '+' operator converts str to number
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.movieService.getMovie(id).subscribe(movie => this.movie = movie);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
